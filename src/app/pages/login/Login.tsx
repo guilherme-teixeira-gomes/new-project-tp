@@ -4,7 +4,7 @@ import { InputLogin } from "./components/InputLogin";
 
 export const Login = () => {
 
-// const inputPasswordRef = useRef<HTMLInputElement>(null)
+const inputPasswordRef = useRef<HTMLInputElement>(null)
 
 const [password, setPassword] = useState('');
 const [email, setEmail] = useState('');
@@ -28,24 +28,17 @@ const handleEntrar = useCallback(() => {
             label="Email"
             value={email}
             onChange={newValue => setEmail(newValue)}
-            // onPressEnter={() => inputPasswordRef.current?.focus()}
+            onPressEnter={() => inputPasswordRef.current?.focus()}
             />
 
             <InputLogin
             label="Senha"
             type="password"
             value={password}
+            ref={inputPasswordRef}
             onChange={newValue => setPassword(newValue)}
             />
             
-            {/* <label>
-              <span>Senha</span>
-              <input 
-              type="password"
-              value={password}
-              ref={inputPasswordRef} 
-              onChange={e => setPassword(e.target.value)} />
-            </label> */}
                 
             <button type="button" onClick={handleEntrar}>Entrar</button>
            </form>
