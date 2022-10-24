@@ -1,4 +1,6 @@
 import { useState, useCallback, useMemo, useRef } from "react"
+
+import { ButtonLogin } from "./components/ButtonLogin";
 import { InputLogin } from "./components/InputLogin";
 
 
@@ -40,7 +42,20 @@ const handleEntrar = useCallback(() => {
             />
             
                 
-            <button type="button" onClick={handleEntrar}>Entrar</button>
+            {/* <button type="button" onClick={handleEntrar}>Entrar</button> */}
+
+            <ButtonLogin 
+            type="button" 
+            onClick={handleEntrar}>
+                Entrar
+            </ButtonLogin>
+
+            <ButtonLogin
+            type="button" 
+            onClick={handleEntrar}>
+                Cadastrar-se
+            </ButtonLogin>
+            
            </form>
            
         </div>
